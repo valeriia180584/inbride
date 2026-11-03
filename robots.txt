@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# ЗАМІНИТИ: ваш домен
+Sitemap: https://[ваш-домен].com.ua/sitemap.xml

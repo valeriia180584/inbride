@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ===== SEO ===== -->
+  <title>InBride — весільні фати, накидки та аксесуари для нареченої в Україні</title>
+  <meta name="description" content="Соборні фати з мереживом, шифонові кейпи, фатинові накидки, рукавички й прикраси для волосся. Вишивка ініціалів і дати на замовлення. Власне виробництво в Україні, доставка Новою поштою.">
+  <!-- ЗАМІНИТИ: вкажіть свій домен у трьох рядках нижче -->
+  <link rel="canonical" href="https://[ваш-домен].com.ua/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FAF7F2">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="InBride">
+  <meta property="og:title" content="InBride — весільні фати, накидки та аксесуари">
+  <meta property="og:description" content="Фати, кейпи, накидки й аксесуари для нареченої. Шиємо в Україні, додаємо вашу вишивку.">
+  <meta property="og:url" content="https://[ваш-домен].com.ua/">
+  <meta property="og:image" content="https://[ваш-домен].com.ua/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Marck+Script&family=Prata&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/cape-chiffon-flight-1200.webp" imagesrcset="images/cape-chiffon-flight-640.webp 640w, images/cape-chiffon-flight-1200.webp 1200w" imagesizes="(min-width: 900px) 55vw, 100vw">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до змісту</a>
+
+  <!-- ============ 1. ШАПКА ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="InBride — на початок сторінки">InBride</a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Головне меню">
+        <ul>
+          <li><a href="#collections">Колекції</a></li>
+          <li><a href="#about">Про бренд</a></li>
+          <li><a href="#delivery">Доставка</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta-mobile" href="#collection">Обрати аксесуар</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm header-cta" href="#collection">Обрати аксесуар</a>
+
+      <button class="burger" type="button" aria-controls="main-nav" aria-expanded="false">
+        <span class="burger-lines" aria-hidden="true"></span>
+        <span class="visually-hidden">Відкрити меню</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 2. ПЕРШИЙ ЕКРАН ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-title">Аксесуари, що завершують образ</h1>
+          <p class="hero-lead">Фати, кейпи, накидки й прикраси для нареченої від InBride. Шиємо в Україні та можемо вишити ваші ініціали, дату весілля чи особливі слова.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#collection">Переглянути колекцію</a>
+            <a class="btn btn-ghost" href="#help">Допоможіть обрати</a>
+          </div>
+        </div>
+
+        <div class="media media-hero">
+          <img src="images/cape-chiffon-flight-1200.webp"
+               srcset="images/cape-chiffon-flight-640.webp 640w, images/cape-chiffon-flight-1200.webp 1200w"
+               sizes="(min-width: 900px) 55vw, 100vw"
+               width="1200" height="1799"
+               alt="Наречена в атласній сукні та довгому шифоновому кейпі, що розвівається за нею"
+               fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. КАТЕГОРІЇ ============ -->
+    <section class="section" id="collections" aria-labelledby="collections-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="collections-title">Колекції</h2>
+          <p>Оберіть, з чого почати. Кожен аксесуар можна підібрати до вашої сукні.</p>
+        </div>
+      </div>
+
+      <ul class="categories" role="list">
+        <li>
+          <a class="category" href="#collection" data-filter="veil">
+            <div class="media media-cat">
+              <img src="images/veil-lace-profile-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена в профіль під довгою фатою з мереживним краєм">
+            </div>
+            <h3>Фати</h3>
+            <p>Різна довжина й кілька відтінків</p>
+          </a>
+        </li>
+        <li>
+          <a class="category" href="#collection" data-filter="cape">
+            <div class="media media-cat">
+              <img src="images/robe-flowers-full-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Прозора фатинова накидка з об'ємними квітами на рукавах і шлейфі">
+            </div>
+            <h3>Накидки й кейпи</h3>
+            <p>Фатин, шифон і мереживо</p>
+          </a>
+        </li>
+        <li>
+          <a class="category" href="#collection" data-filter="gloves">
+            <!-- ЗАМІНИТИ: фото рукавичок -->
+            <div class="ph ph-cat" role="img" aria-label="Місце для фото категорії «Рукавички»"><span class="ph-note">Руки нареченої в рукавичках, жест з букетом, 3:4</span></div>
+            <h3>Рукавички</h3>
+            <p>Делікатний акцент до сукні</p>
+          </a>
+        </li>
+        <li>
+          <a class="category" href="#collection" data-filter="hair">
+            <!-- ЗАМІНИТИ: фото прикрас для волосся -->
+            <div class="ph ph-cat" role="img" aria-label="Місце для фото категорії «Прикраси для волосся»"><span class="ph-note">Прикраса в зачісці, вигляд ззаду, 3:4</span></div>
+            <h3>Прикраси для волосся</h3>
+            <p>Акценти для зачіски</p>
+          </a>
+        </li>
+        <li>
+          <a class="category" href="#personal">
+            <div class="media media-cat">
+              <img src="images/robe-words-detail-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Вишитий напис Forever на прозорому фатині крупним планом">
+            </div>
+            <h3>Персоналізація</h3>
+            <p>Ваша вишивка на фаті чи накидці</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ 4. ОБРАНІ ВИРОБИ ============ -->
+    <!--
+      Фото — реальні. Назви описові, ціни позначені [ціна] — впишіть свої.
+      ДЕМО: відтінки (data-shades) і довжини/розміри (data-lengths) — приклад, замініть на реальні.
+      Атрибути для вікна «Детальніше»:
+        data-name, data-price, data-desc, data-shades (через |), data-lengths (через |), data-length-label,
+        data-images (імена файлів у папці images без -640/-1200.webp, через |), data-alts (підписи до фото, через |)
+    -->
+    <section class="section section-tint" id="collection" aria-labelledby="collection-title">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <h2 id="collection-title">Обрані вироби</h2>
+            <p>Оберіть відтінок на картці, а довжину й деталі — у вікні «Детальніше».</p>
+          </div>
+          <div class="filters" role="group" aria-label="Фільтр за категорією">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">Усі</button>
+            <button type="button" class="chip" data-filter="veil" aria-pressed="false">Фати</button>
+            <button type="button" class="chip" data-filter="cape" aria-pressed="false">Накидки й кейпи</button>
+            <button type="button" class="chip" data-filter="gloves" aria-pressed="false">Рукавички</button>
+            <button type="button" class="chip" data-filter="hair" aria-pressed="false">Для волосся</button>
+          </div>
+        </div>
+
+        <p class="demo-banner" role="note">Ціни, відтінки й довжини поки що демонстраційні: замініть на реальні перед запуском.</p>
+
+        <ul class="products" role="list">
+          <li class="product" data-category="veil"
+              data-name="Соборна фата з мереживом"
+              data-price="[ціна] грн"
+              data-desc="Довга фата зі шлейфом і мереживним краєм. На фото — з вишитими ініціалами та датою весілля на шлейфі."
+              data-shades="Білий|Айворі"
+              data-lengths="250 см|300 см|350 см"
+              data-length-label="Довжина"
+              data-images="veil-lace-front|veil-lace-profile|veil-embroidery-detail"
+              data-alts="Наречена в соборній фаті з мереживом, шлейф лежить колом|Фата в профіль, наречена тримає край над обличчям|Вишиті ініціали й дата весілля на фаті, оточені мереживом">
+            <button type="button" class="product-media js-details" aria-label="Детальніше: Соборна фата з мереживом">
+              <img src="images/veil-lace-front-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена в соборній фаті з мереживним краєм і довгим шлейфом">
+            </button>
+            <div class="product-body">
+              <h3>Соборна фата з мереживом</h3>
+              <p class="product-sub">Шлейф, мереживний край</p>
+              <fieldset class="swatches"><legend>Відтінок</legend></fieldset>
+              <div class="product-foot">
+                <p class="price">[ціна] грн</p>
+                <button type="button" class="btn btn-outline btn-sm js-details">Детальніше</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="product" data-category="cape"
+              data-name="Шифоновий кейп"
+              data-price="[ціна] грн"
+              data-desc="Легкий кейп із шифону, що спадає від плечей довгим шлейфом і красиво рухається. Пасує до суконь без рукавів і з корсетом."
+              data-shades="Білий|Айворі"
+              data-lengths="До підлоги|Зі шлейфом"
+              data-length-label="Довжина"
+              data-images="cape-chiffon-front|cape-chiffon-portrait|cape-chiffon-flight"
+              data-alts="Наречена в атласній сукні й шифоновому кейпі, тримає краї кейпа|Шифоновий кейп на плечах поверх корсетної сукні|Шифоновий кейп розвівається за нареченою">
+            <button type="button" class="product-media js-details" aria-label="Детальніше: Шифоновий кейп">
+              <img src="images/cape-chiffon-front-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена в атласній сукні та шифоновому кейпі до підлоги">
+            </button>
+            <div class="product-body">
+              <h3>Шифоновий кейп</h3>
+              <p class="product-sub">Легкий шифон, шлейф</p>
+              <fieldset class="swatches"><legend>Відтінок</legend></fieldset>
+              <div class="product-foot">
+                <p class="price">[ціна] грн</p>
+                <button type="button" class="btn btn-outline btn-sm js-details">Детальніше</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="product" data-category="cape"
+              data-name="Накидка з об'ємними квітами"
+              data-price="[ціна] грн"
+              data-desc="Прозора фатинова накидка з поясом. Широкі рукави й шлейф оздоблені об'ємними квітами."
+              data-shades="Білий|Молочний"
+              data-lengths=""
+              data-length-label=""
+              data-images="robe-flowers-full|robe-flowers-portrait"
+              data-alts="Фатинова накидка з об'ємними квітами на рукавах і шлейфі, повний зріст|Накидка з квітами крупним планом, наречена тримає руки на поясі">
+            <button type="button" class="product-media js-details" aria-label="Детальніше: Накидка з об'ємними квітами">
+              <img src="images/robe-flowers-portrait-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена у фатиновій накидці з об'ємними квітами на рукавах">
+            </button>
+            <div class="product-body">
+              <h3>Накидка з об'ємними квітами</h3>
+              <p class="product-sub">Фатин, квіти на рукавах і шлейфі</p>
+              <fieldset class="swatches"><legend>Відтінок</legend></fieldset>
+              <div class="product-foot">
+                <p class="price">[ціна] грн</p>
+                <button type="button" class="btn btn-outline btn-sm js-details">Детальніше</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="product" data-category="cape"
+              data-name="Накидка з метеликами"
+              data-price="[ціна] грн"
+              data-desc="Фатинова накидка з широкими рукавами, поясом і шлейфом, прикрашена об'ємними метеликами з перлинками."
+              data-shades="Білий|Айворі"
+              data-lengths=""
+              data-length-label=""
+              data-images="robe-butterflies-full|robe-butterflies-side|robe-butterflies-detail"
+              data-alts="Фатинова накидка з метеликами, наречена розвела руки|Накидка з метеликами збоку, видно шлейф|Об'ємні метелики з перлинками на фатині крупним планом">
+            <button type="button" class="product-media js-details" aria-label="Детальніше: Накидка з метеликами">
+              <img src="images/robe-butterflies-full-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена у фатиновій накидці з об'ємними метеликами й широкими рукавами">
+            </button>
+            <div class="product-body">
+              <h3>Накидка з метеликами</h3>
+              <p class="product-sub">Фатин, метелики з перлинками</p>
+              <fieldset class="swatches"><legend>Відтінок</legend></fieldset>
+              <div class="product-foot">
+                <p class="price">[ціна] грн</p>
+                <button type="button" class="btn btn-outline btn-sm js-details">Детальніше</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="product" data-category="cape"
+              data-name="Накидка з вишитими словами"
+              data-price="[ціна] грн"
+              data-desc="Прозора фатинова накидка з поясом і вишитими написами Forever, Dream, Destiny. Чи можна замінити слова на свої: [уточнити]."
+              data-shades="Білий|Айворі"
+              data-lengths=""
+              data-length-label=""
+              data-images="robe-words-full|robe-words-detail"
+              data-alts="Фатинова накидка з вишитими словами, наречена тримає краї|Вишите слово Forever на фатині крупним планом">
+            <button type="button" class="product-media js-details" aria-label="Детальніше: Накидка з вишитими словами">
+              <img src="images/robe-words-full-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена тримає краї прозорої накидки з вишитими словами">
+            </button>
+            <div class="product-body">
+              <h3>Накидка з вишитими словами</h3>
+              <p class="product-sub">Фатин, вишивка</p>
+              <fieldset class="swatches"><legend>Відтінок</legend></fieldset>
+              <div class="product-foot">
+                <p class="price">[ціна] грн</p>
+                <button type="button" class="btn btn-outline btn-sm js-details">Детальніше</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="product" data-category="cape"
+              data-name="Фатинова накидка зі шлейфом"
+              data-price="[ціна] грн"
+              data-desc="Мінімалістична накидка з м'якого фатину: широкі рукави, пояс і шлейф без декору."
+              data-shades="Білий|Айворі|Молочний"
+              data-lengths=""
+              data-length-label=""
+              data-images="robe-tulle-full|robe-tulle-motion|robe-tulle-portrait"
+              data-alts="Фатинова накидка зі шлейфом, наречена розвела руки|Накидка в русі, фатин розлітається|Накидка крупним планом, наречена тримає пояс">
+            <button type="button" class="product-media js-details" aria-label="Детальніше: Фатинова накидка зі шлейфом">
+              <img src="images/robe-tulle-full-640.webp" width="640" height="960" loading="lazy" decoding="async"
+                   alt="Наречена в прозорій фатиновій накидці зі шлейфом">
+            </button>
+            <div class="product-body">
+              <h3>Фатинова накидка зі шлейфом</h3>
+              <p class="product-sub">Фатин без декору</p>
+              <fieldset class="swatches"><legend>Відтінок</legend></fieldset>
+              <div class="product-foot">
+                <p class="price">[ціна] грн</p>
+                <button type="button" class="btn btn-outline btn-sm js-details">Детальніше</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Показується, коли в обраній категорії ще немає виробів -->
+        <div class="empty-state" id="empty-state" hidden>
+          <p id="empty-text">Вироби цієї категорії ще не додані на сайт. Залиште заявку, і ми розповімо про доступні моделі.</p>
+          <a class="btn btn-primary" href="#order" id="empty-cta" data-prefill="">Запитати про наявні моделі</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. ДОПОМОГА В ПІДБОРІ ============ -->
+    <section class="section" id="help" aria-labelledby="help-title">
+      <div class="container split">
+        <div class="media media-split">
+          <img src="images/cape-chiffon-portrait-640.webp"
+               srcset="images/cape-chiffon-portrait-640.webp 640w, images/cape-chiffon-portrait-1200.webp 1200w"
+               sizes="(min-width: 900px) 45vw, 100vw"
+               width="640" height="960" loading="lazy" decoding="async"
+               alt="Наречена в корсетній сукні та шифоновому кейпі на плечах">
+        </div>
+        <div class="split-text">
+          <h2 id="help-title">Підберемо аксесуари до вашої сукні</h2>
+          <p>Не знаєте, яка довжина фати чи відтінок пасуватиме до сукні? Надішліть фото, і ми запропонуємо поєднання, що підкреслить фасон і тканину.</p>
+          <ol class="steps">
+            <li><strong>Надішліть фото сукні.</strong> Підійде фото з примірки або посилання на модель.</li>
+            <li><strong>Розкажіть про образ.</strong> Зачіска, місце церемонії, настрій, який хочете передати.</li>
+            <li><strong>Отримайте добірку.</strong> Ми зв'яжемося й запропонуємо варіанти аксесуарів.</li>
+          </ol>
+          <a class="btn btn-primary" href="#order" data-prefill="Підбір аксесуарів до сукні" data-focus="f-photo">Підібрати до моєї сукні</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. ПЕРСОНАЛІЗАЦІЯ ============ -->
+    <section class="section section-tint" id="personal" aria-labelledby="personal-title">
+      <div class="container split split-reverse">
+        <div class="split-text">
+          <h2 id="personal-title">Вишивка, яка буде тільки вашою</h2>
+          <p>На фату можна вишити ініціали, дату весілля або коротку фразу. Спробуйте, як це може виглядати, і надішліть нам свій варіант.</p>
+
+          <figure class="tulle" aria-label="Попередній перегляд вишивки">
+            <div class="tulle-band">
+              <p class="tulle-text" id="emb-preview" aria-live="polite">А &amp; М<br>12.09.2027</p>
+            </div>
+            <figcaption>Це лише візуалізація. Остаточний вигляд вишивки погоджуємо з вами окремо.</figcaption>
+          </figure>
+
+          <div class="embroidery-form">
+            <div class="field">
+              <label for="emb-initials">Ініціали</label>
+              <input id="emb-initials" type="text" maxlength="7" placeholder="А &amp; М" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="emb-date">Дата весілля</label>
+              <input id="emb-date" type="text" maxlength="10" placeholder="12.09.2027" inputmode="numeric" autocomplete="off">
+            </div>
+            <div class="field field-full">
+              <label for="emb-text">Ваш надпис</label>
+              <input id="emb-text" type="text" maxlength="40" placeholder="Назавжди твоя" autocomplete="off">
+              <p class="hint">До 40 символів у цьому прикладі. Максимальну довжину надпису [уточнити].</p>
+            </div>
+            <fieldset class="option-group field-full">
+              <legend>Колір нитки <span class="optional">(приклад, доступні кольори [уточнити])</span></legend>
+              <div class="options" id="thread-options">
+                <label class="option"><input type="radio" name="thread" value="тон у тон" data-color="#FFFFFF" checked><span><i style="--sw:#FFFFFF"></i>Тон у тон</span></label>
+                <label class="option"><input type="radio" name="thread" value="сріблястий" data-color="#A9A7A2"><span><i style="--sw:#A9A7A2"></i>Сріблястий</span></label>
+                <label class="option"><input type="radio" name="thread" value="графітовий" data-color="#55565A"><span><i style="--sw:#55565A"></i>Графітовий</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <h3 class="small-title">Як залишити запит</h3>
+          <ol class="steps steps-compact">
+            <li>Впишіть текст вище або підготуйте свій варіант.</li>
+            <li>Натисніть «Надіслати запит на вишивку». Текст автоматично додасться до заявки.</li>
+            <li>Ми зв'яжемося, щоб уточнити шрифт, колір нитки, розміщення й вартість [уточнити].</li>
+          </ol>
+
+          <button type="button" class="btn btn-primary" id="emb-send">Надіслати запит на вишивку</button>
+        </div>
+
+        <figure class="media-figure">
+          <div class="media media-split">
+            <img src="images/veil-embroidery-detail-640.webp"
+                 srcset="images/veil-embroidery-detail-640.webp 640w, images/veil-embroidery-detail-1200.webp 1200w"
+                 sizes="(min-width: 900px) 45vw, 100vw"
+                 width="640" height="960" loading="lazy" decoding="async"
+                 alt="Вишиті ініціали й дата весілля на фаті в обрамленні мережива">
+          </div>
+          <figcaption>Ініціали й дата весілля, вишиті на шлейфі соборної фати.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 7. ПРО БРЕНД ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about">
+        <div class="about-text">
+          <h2 id="about-title">Про InBride</h2>
+          <p class="about-lead">Ми створюємо весільні аксесуари на власному виробництві в Україні, щоб кожна наречена могла зібрати образ, який відчуває своїм.</p>
+          <ul class="about-points" role="list">
+            <li>
+              <h3>Власне виробництво</h3>
+              <p>Шиємо фати, накидки й аксесуари самі, тож можемо підлаштувати виріб під вашу сукню.</p>
+            </li>
+            <li>
+              <h3>Увага до деталей</h3>
+              <p>Як лягає край фати, як фатин поводиться в русі, як тримається кожен метелик чи квітка: ми перевіряємо кожну дрібницю.</p>
+            </li>
+            <li>
+              <h3>Ваш індивідуальний образ</h3>
+              <p>Допомагаємо поєднати аксесуари між собою та додати деталь, яка буде тільки вашою.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="media media-about">
+          <img src="images/robe-butterflies-detail-640.webp"
+               srcset="images/robe-butterflies-detail-640.webp 640w, images/robe-butterflies-detail-1200.webp 1200w"
+               sizes="(min-width: 900px) 40vw, 100vw"
+               width="640" height="960" loading="lazy" decoding="async"
+               alt="Рука тримає край фатину з об'ємними метеликами та перлинками">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. ВІДГУКИ ============ -->
+    <!--
+      Блок для РЕАЛЬНИХ відгуків. Щоб додати відгук, скопіюйте шаблон усередину <ul class="reviews">
+      і видаліть картку-заповнювач (.review-placeholder).
+
+      <li class="review">
+        <img class="review-photo" src="images/review-1.webp" alt="Наречена [ім'я] в аксесуарі InBride" width="600" height="750" loading="lazy">
+        <blockquote>
+          <p>Текст відгуку дослівно, як його написала наречена.</p>
+        </blockquote>
+        <p class="review-author">Ім'я, місто, <a href="[посилання на оригінал відгуку]">джерело</a></p>
+      </li>
+    -->
+    <section class="section section-tint" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="reviews-title">Відгуки наречених</h2>
+          <p>Тут з'являться реальні відгуки наших наречених. Поки що їх можна переглянути в нашому Instagram.</p>
+        </div>
+        <ul class="reviews" role="list">
+          <li class="review review-placeholder">
+            <div class="ph ph-review" role="img" aria-label="Місце для фото з весілля"><span class="ph-note">Фото нареченої з весілля в аксесуарі InBride (з її дозволу), 4:5</span></div>
+            <p>[Текст реального відгуку]</p>
+            <p class="review-author">[Ім'я, місто]</p>
+          </li>
+        </ul>
+        <!-- ЗАМІНИТИ: посилання на ваш Instagram -->
+        <a class="btn btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener">Переглянути відгуки в Instagram</a>
+      </div>
+    </section>
+
+    <!-- ============ 9. ДОСТАВКА Й ОПЛАТА ============ -->
+    <section class="section" id="delivery" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="delivery-title">Доставка й оплата</h2>
+          <p>Позначки [уточнити] замініть на ваші умови перед запуском.</p>
+        </div>
+        <dl class="info-list">
+          <div>
+            <dt>Доставка</dt>
+            <dd>Надсилаємо Новою поштою по всій Україні: у відділення, поштомат або кур'єром [уточнити доступні варіанти]. Вартість доставки — за тарифами перевізника, сплачує [уточнити].</dd>
+          </div>
+          <div>
+            <dt>Терміни виготовлення</dt>
+            <dd>Вироби в наявності: [уточнити]. Вироби під замовлення та з вишивкою: [уточнити].</dd>
+          </div>
+          <div>
+            <dt>Оплата</dt>
+            <dd>[уточнити: повна передоплата, часткова передоплата, накладений платіж, оплата карткою].</dd>
+          </div>
+          <div>
+            <dt>Обмін і повернення</dt>
+            <dd>[уточнити умови й строки обміну та повернення]. Для виробів із персональною вишивкою: [уточнити].</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ 10. ЧАСТІ ЗАПИТАННЯ ============ -->
+    <section class="section section-tint" id="faq" aria-labelledby="faq-title">
+      <div class="container faq">
+        <h2 id="faq-title">Часті запитання</h2>
+        <div class="faq-list">
+          <details>
+            <summary><h3>Як обрати відтінок фати?</h3></summary>
+            <div class="faq-answer">
+              <p>Орієнтуйтеся на колір тканини сукні, а не на назву відтінку: «айворі» у різних виробників може виглядати по-різному. Порівнюйте при денному світлі. Якщо сумніваєтеся, надішліть нам фото сукні, і ми допоможемо з вибором.</p>
+              <p>Чи надсилаємо зразки тканини: [уточнити].</p>
+            </div>
+          </details>
+          <details>
+            <summary><h3>Як підібрати довжину?</h3></summary>
+            <div class="faq-answer">
+              <p>Довжина залежить від силуету сукні й того, наскільки урочистим ви бачите образ. Коротка фата до плечей чи ліктя не заважає рухатися й танцювати. Фата до кінчиків пальців пасує більшості фасонів. Фата до підлоги чи зі шлейфом робить образ святковішим і добре виглядає з довгою сукнею.</p>
+              <p>Урахуйте також зріст і висоту зачіски: від неї залежить, де кріпитиметься гребінь. Доступні довжини: [уточнити].</p>
+            </div>
+          </details>
+          <details>
+            <summary><h3>Чи можна замовити індивідуальний дизайн?</h3></summary>
+            <div class="faq-answer">
+              <p>Так, на фату можна вишити ініціали, дату весілля або власний надпис. Які ще зміни можливі (довжина, мереживо, декор, форма): [уточнити]. Опишіть свою ідею в заявці, і ми зв'яжемося з вами.</p>
+            </div>
+          </details>
+          <details>
+            <summary><h3>Коли краще оформлювати замовлення?</h3></summary>
+            <div class="faq-answer">
+              <p>Залежить від терміну виготовлення: [уточнити]. Закладіть також час на примірку аксесуара разом із сукнею та зачіскою.</p>
+            </div>
+          </details>
+          <details>
+            <summary><h3>Чи можливе термінове замовлення?</h3></summary>
+            <div class="faq-answer">
+              <p>[уточнити: чи можливо й на яких умовах]. Напишіть дату весілля в заявці, і ми скажемо, що встигнемо виготовити.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11. ФОРМА ЗАЯВКИ ============ -->
+    <!-- Форма надсилає дані на /api/lead (функція Vercel → Telegram). Як підключити — див. README.md -->
+    <section class="section section-dark" id="order" aria-labelledby="order-title">
+      <div class="container order">
+        <div class="order-intro">
+          <h2 id="order-title">Отримайте консультацію</h2>
+          <p>Залиште контакти й розкажіть, що вас цікавить. Ми допоможемо з вибором, відтінком і довжиною.</p>
+        </div>
+
+        <form class="lead-form" id="lead-form" action="/api/lead" method="post" novalidate>
+          <div class="field">
+            <label for="f-name">Ім'я</label>
+            <input id="f-name" name="name" type="text" autocomplete="given-name" required maxlength="60">
+            <p class="error" id="f-name-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+380 __ ___ __ __" required maxlength="20">
+            <p class="error" id="f-phone-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-date">Дата весілля</label>
+            <input id="f-date" name="weddingDate" type="date" required>
+            <p class="error" id="f-date-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-item">Який аксесуар вас цікавить</label>
+            <input id="f-item" name="accessory" type="text" list="items-list" required maxlength="200" placeholder="Наприклад, соборна фата">
+            <datalist id="items-list">
+              <option value="Фата">
+              <option value="Накидка або кейп">
+              <option value="Рукавички">
+              <option value="Прикраса для волосся">
+              <option value="Вишивка на фаті">
+              <option value="Підбір аксесуарів до сукні">
+              <option value="Ще не визначилася">
+            </datalist>
+            <p class="error" id="f-item-err" hidden></p>
+          </div>
+          <div class="field field-full">
+            <label for="f-photo">Посилання на фото сукні <span class="optional">(необов'язково)</span></label>
+            <input id="f-photo" name="dressPhoto" type="url" inputmode="url" placeholder="https://" maxlength="500">
+            <p class="hint">Google Диск, Instagram або сайт салону. Переконайтеся, що посилання відкривається без входу в акаунт.</p>
+            <p class="error" id="f-photo-err" hidden></p>
+          </div>
+
+          <!-- Пастка для спам-ботів: людина це поле не бачить -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-company">Компанія</label>
+            <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field field-full consent">
+            <input id="f-consent" name="consent" type="checkbox" required>
+            <label for="f-consent">Погоджуюся на обробку персональних даних відповідно до <a href="privacy.html" target="_blank">політики конфіденційності</a></label>
+            <p class="error" id="f-consent-err" hidden></p>
+          </div>
+
+          <div class="field-full form-submit">
+            <button type="submit" class="btn btn-light">Отримати консультацію</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 12. ПІДВАЛ ============ -->
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-grid">
+      <div>
+        <p class="logo logo-footer">InBride</p>
+        <p class="footer-note">Весільні аксесуари власного виробництва. Україна.</p>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Контакти</h2>
+        <ul class="footer-list" role="list">
+          <!-- ЗАМІНИТИ: номер у href і в тексті, email, Instagram -->
+          <li><a href="tel:+380000000000">[+380 XX XXX XX XX]</a></li>
+          <li><a href="mailto:hello@example.com">[email@inbride.com.ua]</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram [@нікнейм]</a></li>
+          <li>Графік роботи: [уточнити]</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Продавець</h2>
+        <ul class="footer-list" role="list">
+          <li>ФОП [Прізвище Ім'я По батькові]</li>
+          <li>РНОКПП / ЄДРПОУ: [код]</li>
+          <li>Адреса: [юридична адреса]</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Документи</h2>
+        <ul class="footer-list" role="list">
+          <li><a href="privacy.html">Політика конфіденційності</a></li>
+          <li><a href="oferta.html">Публічна оферта</a></li>
+          <li><a href="#delivery">Обмін і повернення</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> InBride</p>
+      <a href="#top">Нагору</a>
+    </div>
+  </footer>
+
+  <!-- Вікно «Детальніше» -->
+  <dialog class="product-dialog" id="product-dialog" aria-labelledby="pd-title">
+    <form method="dialog" class="pd-close-form">
+      <button class="pd-close" type="submit" aria-label="Закрити">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+    </form>
+    <div class="pd-grid">
+      <div class="pd-gallery">
+        <div class="pd-main"><img id="pd-img" src="" alt="" width="1200" height="1799" decoding="async"></div>
+        <div class="pd-thumbs" id="pd-thumbs" role="group" aria-label="Інші фото виробу"></div>
+      </div>
+      <div class="pd-body">
+        <h2 id="pd-title">Назва</h2>
+        <p class="price" id="pd-price"></p>
+        <p id="pd-desc"></p>
+        <fieldset class="option-group" id="pd-shades">
+          <legend>Відтінок</legend>
+          <div class="options"></div>
+        </fieldset>
+        <fieldset class="option-group" id="pd-lengths">
+          <legend>Довжина</legend>
+          <div class="options"></div>
+        </fieldset>
+        <p class="hint">Не впевнені у виборі? Залиште заявку, і ми допоможемо підібрати до сукні.</p>
+        <button type="button" class="btn btn-primary btn-block" id="pd-order">Замовити консультацію щодо виробу</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
