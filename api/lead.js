@@ -1,11 +1,20 @@
 /**
- * Vercel Serverless Function: приймає заявку з форми й надсилає її в Telegram.
+ * Vercel Serverless Function: приймає заявку з форми й пересилає її власниці.
  *
- * Потрібні змінні середовища (Vercel → Project → Settings → Environment Variables):
- *   TELEGRAM_BOT_TOKEN  — токен бота від @BotFather
- *   TELEGRAM_CHAT_ID    — ID чату/групи, куди надходитимуть заявки
+ * Канали доставки (налаштовуються у Vercel → Project → Settings → Environment Variables).
+ * Працює будь-який із них або обидва одразу:
  *
- * Поки змінні не задані, функція відповідає помилкою 503, а сайт показує
+ *   Email через Resend (https://resend.com):
+ *     RESEND_API_KEY  — ключ API з розділу API Keys у Resend
+ *     LEAD_EMAIL_TO   — пошта, куди надходитимуть заявки
+ *                       (без власного домену в Resend — лише пошта, з якою реєструвалися)
+ *     LEAD_EMAIL_FROM — необов'язково; за замовчуванням "InBride <onboarding@resend.dev>"
+ *
+ *   Telegram:
+ *     TELEGRAM_BOT_TOKEN — токен бота від @BotFather
+ *     TELEGRAM_CHAT_ID   — ID чату/групи
+ *
+ * Поки жоден канал не налаштований, функція відповідає помилкою 503, а сайт показує
  * нареченій повідомлення «Не вдалося надіслати заявку» з підказкою зв'язатися напряму.
  */
 
@@ -61,43 +70,75 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ ok: false, error: 'Validation failed', fields: errors });
   }
 
+  const rows = [
+    ["Ім'я", data.name],
+    ['Телефон', data.phone],
+    ['Дата весілля', formatDate(data.weddingDate)],
+    ['Аксесуар', data.accessory],
+  ];
+  if (data.dressPhoto) rows.push(['Фото сукні', data.dressPhoto]);
+
+  const channels = [];
+
+  // ---- Email через Resend ----
+  const resendKey = process.env.RESEND_API_KEY;
+  const emailTo = process.env.LEAD_EMAIL_TO;
+  if (resendKey && emailTo) {
+    const html =
+      '<h2 style="font-family:Georgia,serif;font-weight:400">Нова заявка з сайту InBride</h2>' +
+      '<table cellpadding="6" style="font-family:Arial,sans-serif;font-size:15px;border-collapse:collapse">' +
+      rows.map(([k, v]) => `<tr><td style="color:#6F6458">${escapeHtml(k)}</td><td><b>${escapeHtml(v)}</b></td></tr>`).join('') +
+      '</table>' +
+      '<p style="font-family:Arial,sans-serif;font-size:13px;color:#6F6458">Згода на обробку персональних даних: так</p>';
+    channels.push(
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: process.env.LEAD_EMAIL_FROM || 'InBride <onboarding@resend.dev>',
+          to: emailTo.split(',').map((e) => e.trim()).filter(Boolean),
+          subject: `Заявка InBride: ${data.name}, ${data.accessory}`.slice(0, 150),
+          html,
+        }),
+      }).then(async (r) => {
+        if (!r.ok) throw new Error('Resend ' + r.status + ' ' + (await r.text().catch(() => '')));
+        return 'email';
+      })
+    );
+  }
+
+  // ---- Telegram ----
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) {
-    console.error('[lead] TELEGRAM_BOT_TOKEN або TELEGRAM_CHAT_ID не задані');
+  if (token && chatId) {
+    const text = ['<b>Нова заявка з сайту InBride</b>', '']
+      .concat(rows.map(([k, v]) => `<b>${escapeHtml(k)}:</b> ${escapeHtml(v)}`))
+      .concat(['', 'Згода на обробку персональних даних: так'])
+      .join('\n');
+    channels.push(
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+      }).then(async (r) => {
+        const result = await r.json().catch(() => ({}));
+        if (!r.ok || !result.ok) throw new Error('Telegram ' + r.status + ' ' + (result.description || ''));
+        return 'telegram';
+      })
+    );
+  }
+
+  if (!channels.length) {
+    console.error('[lead] Не налаштовано жодного каналу: потрібні RESEND_API_KEY + LEAD_EMAIL_TO або TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID');
     return res.status(503).json({ ok: false, error: 'Lead delivery is not configured' });
   }
 
-  const lines = [
-    '<b>Нова заявка з сайту InBride</b>',
-    '',
-    `<b>Ім'я:</b> ${escapeHtml(data.name)}`,
-    `<b>Телефон:</b> ${escapeHtml(data.phone)}`,
-    `<b>Дата весілля:</b> ${escapeHtml(formatDate(data.weddingDate))}`,
-    `<b>Аксесуар:</b> ${escapeHtml(data.accessory)}`,
-  ];
-  if (data.dressPhoto) lines.push(`<b>Фото сукні:</b> ${escapeHtml(data.dressPhoto)}`);
-  lines.push('', 'Згода на обробку персональних даних: так');
+  const results = await Promise.allSettled(channels);
+  results.filter((r) => r.status === 'rejected').forEach((r) => console.error('[lead]', r.reason && r.reason.message));
+  const delivered = results.filter((r) => r.status === 'fulfilled').map((r) => r.value);
 
-  try {
-    const tg = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: lines.join('\n'),
-        parse_mode: 'HTML',
-        disable_web_page_preview: true,
-      }),
-    });
-    const result = await tg.json().catch(() => ({}));
-    if (!tg.ok || !result.ok) {
-      console.error('[lead] Telegram error', tg.status, result.description);
-      return res.status(502).json({ ok: false, error: 'Delivery failed' });
-    }
-    return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('[lead] Network error', err);
+  if (!delivered.length) {
     return res.status(502).json({ ok: false, error: 'Delivery failed' });
   }
+  return res.status(200).json({ ok: true, delivered });
 };
