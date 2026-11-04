@@ -299,12 +299,12 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ---------- 2. Перший екран ---------- */
-.hero { padding: 28px 0 0; }
-.hero-grid { display: grid; gap: 28px; }
+.hero { padding: 0; }
+.hero-grid { display: grid; gap: 24px; }
 .hero-text { display: flex; flex-direction: column; gap: 20px; }
 .hero-lead { font-size: 1.08rem; color: var(--stone); max-width: 46ch; margin: 0; }
 .hero-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
-.media-hero { aspect-ratio: 4 / 5; margin: 0 calc(var(--gutter) * -1); }
+.media-hero { order: -1; height: min(125vw, 62vh); margin: 0 calc(var(--gutter) * -1); }
 .media-hero img { object-position: 62% 30%; }
 
 @media (min-width: 600px) {
@@ -319,7 +319,7 @@ body.menu-open { overflow: hidden; }
     gap: 56px;
   }
   .hero-text { padding-bottom: 24px; }
-  .media-hero { margin: 0; aspect-ratio: 4 / 5; max-height: calc(100vh - var(--header-h) - 72px); width: 100%; }
+  .media-hero { order: 0; margin: 0; height: auto; aspect-ratio: 4 / 5; max-height: calc(100vh - var(--header-h) - 72px); width: 100%; }
 }
 
 /* Єдина анімація при завантаженні */
@@ -405,12 +405,13 @@ ul.categories {
 
 .products {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 12px;
 }
-@media (min-width: 600px) { .products { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 600px) { .products { gap: 40px 20px; } }
 @media (min-width: 1000px) { .products { grid-template-columns: repeat(3, 1fr); gap: 56px 28px; } }
 
+.product { display: flex; flex-direction: column; }
 .product[hidden] { display: none; }
 .product-media {
   display: block;
@@ -438,12 +439,12 @@ ul.categories {
   max-width: 640px;
 }
 .empty-state p { margin: 0; color: var(--stone); }
-.product-body { padding-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.product-body { flex: 1; padding-top: 16px; display: flex; flex-direction: column; gap: 10px; }
 .product-sub { color: var(--stone); font-size: .95rem; margin: -4px 0 0; }
 
-.swatches { border: 0; margin: 0; padding: 0; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
-.swatches legend { float: left; font-size: .88rem; color: var(--stone); margin-right: 8px; padding: 0; }
-.swatch { position: relative; }
+.swatches { border: 0; margin: 0 -4px; padding: 0; display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+.swatches legend { float: left; font-size: .88rem; color: var(--stone); margin: 0 4px 0 4px; padding: 0; }
+.swatch { position: relative; padding: 4px; }
 .swatch input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
 .swatch span {
   display: block;
@@ -464,7 +465,7 @@ ul.categories {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 4px;
+  margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid var(--oat);
 }
@@ -828,3 +829,25 @@ ul.categories {
 .legal h2 { font-size: 1.4rem; margin: 36px 0 10px; }
 .legal p { color: var(--stone); }
 .legal-note { border-left: 2px solid var(--silk); padding-left: 12px; }
+
+
+/* ---------- Телефон: компактний каталог і персоналізація ---------- */
+@media (max-width: 599px) {
+  .product-body { padding-top: 12px; gap: 8px; }
+  .product h3 { font-size: 1.05rem; }
+  .product-sub { font-size: .84rem; line-height: 1.4; margin: 0; }
+  .swatches legend,
+  .swatch-name {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .product-foot { flex-direction: column; align-items: stretch; gap: 10px; padding-top: 10px; }
+  .product-foot .btn { width: 100%; padding: 0 12px; }
+  .price { font-size: .98rem; }
+
+  .media-split { aspect-ratio: 4 / 3; }
+  #help .media-split img { object-position: 50% 18%; }
+  #personal .media-split img { object-position: 50% 55%; }
+  .tulle-band { min-height: 150px; padding: 20px 16px; }
+  .embroidery-form { gap: 12px; }
+}
+.emb-how { font-size: .95rem; color: var(--stone); max-width: 52ch; }
